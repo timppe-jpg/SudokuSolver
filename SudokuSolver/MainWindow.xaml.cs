@@ -28,6 +28,11 @@ namespace SudokuSolver
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Solves sudoku with backtracking algorithm recursively
+        /// </summary>
+        /// <param name="sud">array containing sudoku</param>
+        /// <returns></returns>
         public bool Solve(int[,] sud)
         {
             Position position = FindEmpty(sud);
@@ -53,6 +58,13 @@ namespace SudokuSolver
             return false;
         }
 
+        /// <summary>
+        /// Check if next move follows sudoku rules
+        /// </summary>
+        /// <param name="sud">Current sudoku</param>
+        /// <param name="number">Number to test</param>
+        /// <param name="position">position to insert number</param>
+        /// <returns>True, if follows sudoku rules</returns>
         public bool Valid(int[,] sud,int number, Position position)
         {
             //Row
@@ -82,7 +94,11 @@ namespace SudokuSolver
             return true;
         }
 
-        
+        /// <summary>
+        /// Finds next empty cell in sudoku
+        /// </summary>
+        /// <param name="sud">Current suodku</param>
+        /// <returns>Next empty cell</returns>
         public Position FindEmpty(int[,] sud)
         {
             for (int i = 0; i < sud.GetLength(0); i++)
@@ -94,6 +110,11 @@ namespace SudokuSolver
             }
             return null;
         }
+
+        /// <summary>
+        /// Print 2d array containing the solved sudoku to UI textbox
+        /// </summary>
+        /// <param name="sud"></param>
         public void Print(int[,] sud)
         {
             string result = string.Empty;
@@ -121,6 +142,11 @@ namespace SudokuSolver
             TextBox_Solved.Text = result;
         }
 
+        /// <summary>
+        /// EventHandler to allow window to be moved
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -129,6 +155,10 @@ namespace SudokuSolver
             }
         }
 
+        /// <summary>
+        /// Init sudoku data into 2d array from UI.
+        /// It is overly complicated due to the way elements were copied 
+        /// </summary>
         private void InitSudoku()
         {
             int lap = 0;
