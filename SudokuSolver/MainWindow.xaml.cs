@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace SudokuSolver
 {
@@ -35,6 +36,17 @@ namespace SudokuSolver
         /// <returns></returns>
         public bool Solve(int[,] sud)
         {
+            bool? animate = false;
+            checkBox_animate.Dispatcher.Invoke(new Action(
+                () => animate = checkBox_animate.IsChecked));
+
+            if ((bool)animate)
+            {
+                Print(sud);
+                Thread.Sleep(50);
+            }
+            
+
             Position position = FindEmpty(sud);
             if (position == null) return true;
 
@@ -50,11 +62,10 @@ namespace SudokuSolver
 
                     if (Solve(sud)) return true;
 
-                    sud[row, column] = 0;
+                    sud[row, column] = 0;    
                 }
-                //TODO add animation
             }
-
+            Print(sud);
             return false;
         }
 
@@ -119,6 +130,13 @@ namespace SudokuSolver
         {
             string result = string.Empty;
 
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                TextBox_Solved.Text = "";
+            }), DispatcherPriority.Background);
+
+            
+
             for (int y = 0; y < sud.GetLength(0); y++)
             {
                 for (int x = 0; x < sud.GetLength(1); x++)
@@ -138,8 +156,11 @@ namespace SudokuSolver
                     }
                 }
             }
-            
-            TextBox_Solved.Text = result;
+
+            Dispatcher.BeginInvoke(new Action(() =>
+            {
+                TextBox_Solved.Text = result;
+            }), DispatcherPriority.Background);
         }
 
         /// <summary>
@@ -183,8 +204,7 @@ namespace SudokuSolver
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             InitSudoku();
-            Solve(sudoku);
-            Print(sudoku);
+            Task.Factory.StartNew(() => Solve(sudoku));
         }
     }
 }

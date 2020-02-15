@@ -43,7 +43,7 @@
                            FontSize="16"
                            Foreground="White"
                            VerticalAlignment="Center"/>
-                    <CheckBox VerticalAlignment="Center"/>
+                    <CheckBox x:Name="checkBox_animate" VerticalAlignment="Center"/>
                 </StackPanel>
 
 
