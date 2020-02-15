@@ -1,0 +1,158 @@
+﻿<Window x:Class="SudokuSolver.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SudokuSolver"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400"
+        AllowsTransparency="True"
+        Background="Transparent"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        MouseDown="Window_MouseDown">
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Border CornerRadius="10" Grid.RowSpan="2">
+                <Border.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#7be9f6" Offset="0.0"/>
+                        <GradientStop Color="#f083da" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <StackPanel VerticalAlignment="Top" Margin="10">
+                <Image Source="Images/sudoku.png" Width="80"/>
+                <TextBlock Text="Sudoku Solver"
+                           FontWeight="Light"
+                           FontFamily="helvetica"
+                           FontSize="22"
+                           Foreground="White"
+                           HorizontalAlignment="Center"/>
+                <StackPanel Orientation="Horizontal" Margin="0,20,0,0">
+                    <Button Width="100" Height="40" Content="Solve" Margin="60,0,60,0" Click="Button_Click"/>
+                    <TextBlock Text="Animate"
+                           FontWeight="Light"
+                           FontFamily="helvetica"
+                           FontSize="16"
+                           Foreground="White"
+                           VerticalAlignment="Center"/>
+                    <CheckBox VerticalAlignment="Center"/>
+                </StackPanel>
+
+
+            </StackPanel>
+
+
+        </Grid>
+
+        <Grid>
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Bottom" Name="SudokuTable">
+                <TextBox x:Name="SudokuPosition" Text="7" Height="20" Width="20" Background="Transparent"/>
+                <TextBox x:Name="SudokuPosition0" Text="0" Height="20" Width="20" Background="Transparent" Margin="20,0,-20,0"/>
+                <TextBox x:Name="SudokuPosition1" Text="3" Height="20" Width="20" Background="Transparent" Margin="40,0,-40,0"/>
+                <TextBox x:Name="SudokuPosition2" Text="0" Height="20" Width="20" Background="Transparent" Margin="0,-20,0,20"/>
+                <TextBox x:Name="SudokuPosition3" Text="4" Height="20" Width="20" Background="Transparent" Margin="20,-20,-20,20"/>
+                <TextBox x:Name="SudokuPosition4" Text="0" Height="20" Width="20" Background="Transparent" Margin="40,-20,-40,20"/>
+                <TextBox x:Name="SudokuPosition5" Text="0" Height="20" Width="20" Background="Transparent" Margin="0,-40,0,40"/>
+                <TextBox x:Name="SudokuPosition6" Text="0" Height="20" Width="20" Background="Transparent" Margin="20,-40,-20,40"/>
+                <TextBox x:Name="SudokuPosition7" Text="9" Height="20" Width="20" Background="Transparent" Margin="40,-40,-40,40"/>
+                <TextBox x:Name="SudokuPosition8" Text="0" Height="20" Width="20" Background="Transparent" Margin="60,0,-60,0"/>
+                <TextBox x:Name="SudokuPosition9" Text="1" Height="20" Width="20" Background="Transparent" Margin="80,0,-80,0"/>
+                <TextBox x:Name="SudokuPosition10" Text="8" Height="20" Width="20" Background="Transparent" Margin="100,0,-100,0"/>
+                <TextBox x:Name="SudokuPosition11" Text="0" Height="20" Width="20" Background="Transparent" Margin="60,-20,-60,20"/>
+                <TextBox x:Name="SudokuPosition12" Text="5" Height="20" Width="20" Background="Transparent" Margin="80,-20,-80,20"/>
+                <TextBox x:Name="SudokuPosition13" Text="0" Height="20" Width="20" Background="Transparent" Margin="100,-20,-100,20"/>
+                <TextBox x:Name="SudokuPosition14" Text="3" Height="20" Width="20" Background="Transparent" Margin="60,-40,-60,40"/>
+                <TextBox x:Name="SudokuPosition15" Text="0" Height="20" Width="20" Background="Transparent" Margin="80,-40,-80,40"/>
+                <TextBox x:Name="SudokuPosition16" Text="0" Height="20" Width="20" Background="Transparent" Margin="100,-40,-100,40"/>
+                <TextBox x:Name="SudokuPosition17" Text="0" Height="20" Width="20" Background="Transparent" Margin="120,0,-120,0"/>
+                <TextBox x:Name="SudokuPosition18" Text="0" Height="20" Width="20" Background="Transparent" Margin="140,0,-140,0"/>
+                <TextBox x:Name="SudokuPosition19" Text="0" Height="20" Width="20" Background="Transparent" Margin="160,0,-160,0"/>
+                <TextBox x:Name="SudokuPosition20" Text="0" Height="20" Width="20" Background="Transparent" Margin="120,-20,-120,20"/>
+                <TextBox x:Name="SudokuPosition21" Text="3" Height="20" Width="20" Background="Transparent" Margin="140,-20,-140,20"/>
+                <TextBox x:Name="SudokuPosition22" Text="6" Height="20" Width="20" Background="Transparent" Margin="160,-20,-160,20"/>
+                <TextBox x:Name="SudokuPosition23" Text="0" Height="20" Width="20" Background="Transparent" Margin="120,-40,-120,40"/>
+                <TextBox x:Name="SudokuPosition24" Text="7" Height="20" Width="20" Background="Transparent" Margin="140,-40,-140,40"/>
+                <TextBox x:Name="SudokuPosition25" Text="4" Height="20" Width="20" Background="Transparent" Margin="160,-40,-160,40"/>
+                <TextBox x:Name="SudokuPosition26" Text="0" Height="20" Width="20" Background="Transparent" Margin="0,-60,0,60"/>
+                <TextBox x:Name="SudokuPosition27" Text="5" Height="20" Width="20" Background="Transparent" Margin="20,-60,-20,60"/>
+                <TextBox x:Name="SudokuPosition28" Text="0" Height="20" Width="20" Background="Transparent" Margin="40,-60,-40,60"/>
+                <TextBox x:Name="SudokuPosition29" Text="0" Height="20" Width="20" Background="Transparent" Margin="0,-80,0,80"/>
+                <TextBox x:Name="SudokuPosition30" Text="0" Height="20" Width="20" Background="Transparent" Margin="20,-80,-20,80"/>
+                <TextBox x:Name="SudokuPosition31" Text="4" Height="20" Width="20" Background="Transparent" Margin="40,-80,-40,80"/>
+                <TextBox x:Name="SudokuPosition32" Text="8" Height="20" Width="20" Background="Transparent" Margin="0,-100,0,100"/>
+                <TextBox x:Name="SudokuPosition33" Text="2" Height="20" Width="20" Background="Transparent" Margin="20,-100,-20,100"/>
+                <TextBox x:Name="SudokuPosition34" Text="0" Height="20" Width="20" Background="Transparent" Margin="40,-100,-40,100"/>
+                <TextBox x:Name="SudokuPosition35" Text="0" Height="20" Width="20" Background="Transparent" Margin="60,-60,-60,60"/>
+                <TextBox x:Name="SudokuPosition36" Text="0" Height="20" Width="20" Background="Transparent" Margin="80,-60,-80,60"/>
+                <TextBox x:Name="SudokuPosition37" Text="3" Height="20" Width="20" Background="Transparent" Margin="100,-60,-100,60"/>
+                <TextBox x:Name="SudokuPosition38" Text="6" Height="20" Width="20" Background="Transparent" Margin="60,-80,-60,80"/>
+                <TextBox x:Name="SudokuPosition39" Text="0" Height="20" Width="20" Background="Transparent" Margin="80,-80,-80,80"/>
+                <TextBox x:Name="SudokuPosition40" Text="2" Height="20" Width="20" Background="Transparent" Margin="100,-80,-100,80"/>
+                <TextBox x:Name="SudokuPosition41" Text="1" Height="20" Width="20" Background="Transparent" Margin="60,-100,-60,100"/>
+                <TextBox x:Name="SudokuPosition42" Text="0" Height="20" Width="20" Background="Transparent" Margin="80,-100,-80,100"/>
+                <TextBox x:Name="SudokuPosition43" Text="0" Height="20" Width="20" Background="Transparent" Margin="100,-100,-100,100"/>
+                <TextBox x:Name="SudokuPosition44" Text="0" Height="20" Width="20" Background="Transparent" Margin="120,-60,-120,60"/>
+                <TextBox x:Name="SudokuPosition45" Text="2" Height="20" Width="20" Background="Transparent" Margin="140,-60,-140,60"/>
+                <TextBox x:Name="SudokuPosition46" Text="8" Height="20" Width="20" Background="Transparent" Margin="160,-60,-160,60"/>
+                <TextBox x:Name="SudokuPosition47" Text="9" Height="20" Width="20" Background="Transparent" Margin="120,-80,-120,80"/>
+                <TextBox x:Name="SudokuPosition48" Text="0" Height="20" Width="20" Background="Transparent" Margin="140,-80,-140,80"/>
+                <TextBox x:Name="SudokuPosition49" Text="0" Height="20" Width="20" Background="Transparent" Margin="160,-80,-160,80"/>
+                <TextBox x:Name="SudokuPosition50" Text="0" Height="20" Width="20" Background="Transparent" Margin="120,-100,-120,100"/>
+                <TextBox x:Name="SudokuPosition51" Text="4" Height="20" Width="20" Background="Transparent" Margin="140,-100,-140,100"/>
+                <TextBox x:Name="SudokuPosition52" Text="0" Height="20" Width="20" Background="Transparent" Margin="160,-100,-160,100"/>
+                <TextBox x:Name="SudokuPosition53" Text="1" Height="20" Width="20" Background="Transparent" Margin="0,-120,0,120"/>
+                <TextBox x:Name="SudokuPosition54" Text="9" Height="20" Width="20" Background="Transparent" Margin="20,-120,-20,120"/>
+                <TextBox x:Name="SudokuPosition55" Text="0" Height="20" Width="20" Background="Transparent" Margin="40,-120,-40,120"/>
+                <TextBox x:Name="SudokuPosition56" Text="6" Height="20" Width="20" Background="Transparent" Margin="0,-140,0,140"/>
+                <TextBox x:Name="SudokuPosition57" Text="8" Height="20" Width="20" Background="Transparent" Margin="20,-140,-20,140"/>
+                <TextBox x:Name="SudokuPosition58" Text="0" Height="20" Width="20" Background="Transparent" Margin="40,-140,-40,140"/>
+                <TextBox x:Name="SudokuPosition59" Text="0" Height="20" Width="20" Background="Transparent" Margin="0,-160,0,160"/>
+                <TextBox x:Name="SudokuPosition60" Text="0" Height="20" Width="20" Background="Transparent" Margin="20,-160,-20,160"/>
+                <TextBox x:Name="SudokuPosition61" Text="0" Height="20" Width="20" Background="Transparent" Margin="40,-160,-40,160"/>
+                <TextBox x:Name="SudokuPosition62" Text="0" Height="20" Width="20" Background="Transparent" Margin="60,-120,-60,120"/>
+                <TextBox x:Name="SudokuPosition63" Text="0" Height="20" Width="20" Background="Transparent" Margin="80,-120,-80,120"/>
+                <TextBox x:Name="SudokuPosition64" Text="4" Height="20" Width="20" Background="Transparent" Margin="100,-120,-100,120"/>
+                <TextBox x:Name="SudokuPosition65" Text="0" Height="20" Width="20" Background="Transparent" Margin="60,-140,-60,140"/>
+                <TextBox x:Name="SudokuPosition66" Text="7" Height="20" Width="20" Background="Transparent" Margin="80,-140,-80,140"/>
+                <TextBox x:Name="SudokuPosition67" Text="0" Height="20" Width="20" Background="Transparent" Margin="100,-140,-100,140"/>
+                <TextBox x:Name="SudokuPosition68" Text="2" Height="20" Width="20" Background="Transparent" Margin="60,-160,-60,160"/>
+                <TextBox x:Name="SudokuPosition69" Text="6" Height="20" Width="20" Background="Transparent" Margin="80,-160,-80,160"/>
+                <TextBox x:Name="SudokuPosition70" Text="0" Height="20" Width="20" Background="Transparent" Margin="100,-160,-100,160"/>
+                <TextBox x:Name="SudokuPosition71" Text="5" Height="20" Width="20" Background="Transparent" Margin="120,-120,-120,120"/>
+                <TextBox x:Name="SudokuPosition72" Text="0" Height="20" Width="20" Background="Transparent" Margin="140,-120,-140,120"/>
+                <TextBox x:Name="SudokuPosition73" Text="0" Height="20" Width="20" Background="Transparent" Margin="160,-120,-160,120"/>
+                <TextBox x:Name="SudokuPosition74" Text="0" Height="20" Width="20" Background="Transparent" Margin="120,-140,-120,140"/>
+                <TextBox x:Name="SudokuPosition75" Text="9" Height="20" Width="20" Background="Transparent" Margin="140,-140,-140,140"/>
+                <TextBox x:Name="SudokuPosition76" Text="0" Height="20" Width="20" Background="Transparent" Margin="160,-140,-160,140"/>
+                <TextBox x:Name="SudokuPosition77" Text="7" Height="20" Width="20" Background="Transparent" Margin="120,-160,-120,160"/>
+                <TextBox x:Name="SudokuPosition78" Text="0" Height="20" Width="20" Background="Transparent" Margin="140,-160,-140,160"/>
+                <TextBox x:Name="SudokuPosition79" Text="1" Height="20" Width="20" Background="Transparent" Margin="160,-160,-160,160"/>
+
+
+            </Grid>
+            <Grid HorizontalAlignment="Right" VerticalAlignment="Bottom">
+                <TextBox x:Name="TextBox_Solved" Height="200" Width="150" Background="Transparent"/>
+            </Grid>
+
+
+
+        </Grid>
+
+        <Line Stroke="Black" X1="60" Y1="270" X2="60" Y2="450"/>
+        <Line Stroke="Black" X1="120" Y1="270" X2="120" Y2="450"/>
+
+        <Line Stroke="Black" X1="0" Y1="330" X2="180" Y2="330"/>
+        <Line Stroke="Black" X1="0" Y1="390" X2="180" Y2="390"/>
+
+    </Grid>
+
+
+</Window>

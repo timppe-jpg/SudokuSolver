@@ -1,0 +1,17 @@
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\bin\Debug\SudokuSolver.exe.config
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\bin\Debug\SudokuSolver.exe
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\bin\Debug\SudokuSolver.pdb
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\obj\Debug\SudokuSolver.csprojAssemblyReference.cache
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\obj\Debug\MainWindow.g.cs
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\obj\Debug\App.g.cs
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\obj\Debug\SudokuSolver_MarkupCompile.cache
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\obj\Debug\SudokuSolver_MarkupCompile.lref
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\obj\Debug\MainWindow.baml
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\obj\Debug\SudokuSolver.g.resources
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\obj\Debug\SudokuSolver.Properties.Resources.resources
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\obj\Debug\SudokuSolver.csproj.GenerateResource.cache
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\obj\Debug\SudokuSolver.csproj.CoreCompileInputs.cache
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\obj\Debug\SudokuSolver.exe
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\obj\Debug\SudokuSolver.pdb
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\obj\Debug\ButtonTheme.baml
+C:\Users\Timi\source\repos\SudokuSolver\SudokuSolver\obj\Debug\App.baml
